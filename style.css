@@ -12,7 +12,6 @@ body {
   position: relative;
   width: 160px;
   height: 200px;
-  animation-name: player;
   animation-duration: 0.5s;
   animation-iteration-count: infinite;
 }
@@ -99,7 +98,6 @@ body {
   border-radius: 30px 65% 55% 30px;
   z-index: 2;
   overflow: hidden;
-  animation-name: glasses;
   animation-duration: 0.5s;
   animation-iteration-count: infinite;
 }
@@ -152,7 +150,6 @@ body {
   border-radius: 20px 0 0 35%;
   z-index: 0;
   overflow: hidden;
-  animation-name: bag;
   animation-duration: 0.5s;
   animation-iteration-count: infinite;
 }
@@ -199,7 +196,6 @@ body {
   border: 8px solid black;
   border-radius: 0 0 30% 30%;
   z-index: 0;
-  animation-name: legLeft;
   animation-duration: 0.5s;
   animation-iteration-count: infinite;
 }
@@ -235,7 +231,6 @@ body {
   border-top: none;
   border-radius: 20% 20% 30% 30%;
   z-index: 1;
-  animation-name: legRight;
   animation-duration: 0.5s;
   animation-iteration-count: infinite;
 }
