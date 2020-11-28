@@ -3,16 +3,16 @@ const socket = io('https://amonguscss.herokuapp.com');
 
 socket.on('setupPlayers', (playersToSetup: any) => {
   Object.keys(playersToSetup).forEach((id) => {
-    const { top, left, color } = playersToSetup[id];
+    const { top, left, color, lookingLeft } = playersToSetup[id];
 
-    addPlayer(id, top, left, color);
+    addPlayer(id, top, left, color, lookingLeft);
   });
 
   start();
 });
 
 socket.on('playerConnect', (id: string, color: string) => {
-  addPlayer(id, 0, 0, color);
+  addPlayer(id, 0, 0, color, false);
 });
 
 socket.on('playerDisconnect', (id: string) => {
@@ -61,7 +61,8 @@ function addPlayer(
   id: string,
   topPosition: number,
   leftPosition: number,
-  color: string
+  color: string,
+  lookingLeft: boolean
 ) {
   const player = document.createElement('div');
   player.classList.add('player');
@@ -119,10 +120,16 @@ function addPlayer(
     top: topPosition,
     left: leftPosition,
     walk: false,
-    lookingLeft: false,
+    lookingLeft: lookingLeft,
   };
 
   players[id] = newPlayer;
+
+  if (lookingLeft) {
+    players[id].player.style.transform = 'rotateY(180deg)';
+  } else {
+    players[id].player.style.transform = 'rotateY(0deg)';
+  }
 
   updatePlayerPosition(id);
 }
