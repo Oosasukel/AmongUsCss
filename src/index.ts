@@ -37,6 +37,8 @@ socket.on('playerUpdate', (id: string, player: any) => {
 
   players[id] = { ...players[id], ...player };
 
+  console.log(players[id]);
+
   updatePlayerPosition(id);
 });
 
@@ -123,6 +125,8 @@ function addPlayer(
   };
 
   players[id] = newPlayer;
+
+  updatePlayerPosition(id);
 }
 
 window.addEventListener('keydown', (event) => {
