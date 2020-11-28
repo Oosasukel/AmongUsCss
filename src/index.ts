@@ -37,8 +37,6 @@ socket.on('playerUpdate', (id: string, player: any) => {
 
   players[id] = { ...players[id], ...player };
 
-  console.log(players[id]);
-
   updatePlayerPosition(id);
 });
 
