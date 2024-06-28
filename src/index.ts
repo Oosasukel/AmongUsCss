@@ -1,5 +1,5 @@
 import io from 'socket.io-client';
-const socket = io('https://amonguscss.herokuapp.com');
+const socket = io('https://amonguscss-backend.onrender.com');
 
 socket.on('setupPlayers', (playersToSetup: any) => {
   Object.keys(playersToSetup).forEach((id) => {
